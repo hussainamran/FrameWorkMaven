@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         //feature we use to provide the path of all the feature file
-        features = "src/test/resources/features",
+        features = "src/test/resources/features/",
         //glue is where we find implementations for gherkins steps
         //we provide the path of package where we defined all the steps
         glue = "steps",
@@ -20,8 +20,10 @@ import org.junit.runner.RunWith;
         //when we set it to true it simply remove all the irrelevant information from the console
         monochrome = true,
 
-        tags="@dashboard",
-        plugin = {"pretty","html:target/cucumber.html"}
+        //tags will identify the scenario based on the teg we provided to the feature file
+        tags="@Homework",
+        //this failed.txt file holds all the scenarios which are failed during execution
+        plugin = {"pretty","html:target/cucumber.html", "json:target/cucumber.json", "rerun:target/failed.txt"}
 
 )
 public class Smoke {

@@ -3,7 +3,7 @@ Feature: Login feature
   Background:
     #Given user is navigated to HRMS application
 
-  @smoke @sprint2
+  @smoke  @mvn
   Scenario Outline: Valid admin login
     When user enters different "<username>" and "<password>"
     And user click on login button
@@ -13,13 +13,13 @@ Feature: Login feature
       | admin    | Hum@nhrm123 | Admin |
 
 
-  @apple
+  @apple @batch11
   Scenario: Valid ess login
     When user enter valid ess admin username and password
     And user click on login button
     Then admin user is successfully logged in
 
-  @login
+  @login @batch11
   Scenario Outline: negative login test
     When user enters different "<username>" and "<password>" and verify the "<error>" for all the combinations
     Examples:
